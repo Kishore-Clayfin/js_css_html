@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //freeze() it will freeze the object and we cannot modify if we modify it will not five the latest value
+        var obj = {
+            a: 10,
+            b: 20,
+            c: 30
+        };
+        Object.freeze(obj);
+        obj.a = 20;
+        console.log(obj.a);//10
+
+        //keys() it will give the keys present inside the object
+        console.log(Object.keys(obj));// ['a', 'b', 'c']
+
+        //values
+        console.log(Object.values(obj));//[10, 20, 30]
+
+
+        //assign() it will copies all properties of one object to another object
+        const target = {
+            d: 5,
+            e: 4
+        };
+        const source = {
+            e: 6,
+            f: 9
+        };
+        const returntarget = Object.assign(target, source);
+        console.log(target);//{d: 5, e: 6, f: 9}
+        console.log(returntarget);//{d: 5, e: 6, f: 9}
+
+        //create() used to create new object using the existing object
+
+        const person = {
+            name: 'kishore',
+            isHuman: false,
+            printIntroduction: function () {
+                console.log(`My name is ${this.name}, Am I Human? ${this.isHuman}`);
+            }
+
+        }
+        person.printIntroduction();//My name is kishore, Am I Human? false
+        const me = Object.create(person);
+        me.name = 'Mathew';
+        me.isHuman = 'true';
+        me.printIntroduction();//My name is Mathew, Am I Human? true
+
+
+        //toString()
+
+        function Dog(name) {
+            this.name = name;
+        }
+        const Dog1 = new Dog('Gabbby');
+        Dog.prototype.toString = function dogToString() {
+            return `${this.name}`;
+        };
+        console.log(Dog1.toString());//Gabbby
+
+        //defineProperties()
+        const object1 = {};
+        Object.defineProperties(object1, {
+            property1: {
+                value: 42,
+                writable: false
+            },
+            property2: {
+                value: 32,
+                writable: true
+            }
+        });
+        object1.property1 = 30; //if writable was false we cannot reinitialize 
+        object1.property2 = 50; //if writable was true we can reinitialize 
+        console.log(object1.property1)//42
+        console.log(object1.property2)//50
+
+
+
+
+    </script>
+</body>
+
+</html>

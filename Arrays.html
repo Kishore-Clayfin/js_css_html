@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //entries() it will give Object that contains key value pairs for each index in arrray
+        const array1 = ['a', 'b', 'c'];
+        const iterator1 = array1.entries();
+        console.log(iterator1.next().value);//[0, 'a']
+        console.log(iterator1.next().value);//[1, 'b']
+
+        //filter() it will filter the array according to the condition and gives the result 
+        const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        const result = words.filter(word => word.length > 4);
+        console.log(result);
+
+        //flat() it will reduce the nested array by how much u given inside
+        const arr1 = [0, 1, 2, [3, 4]];
+        console.log(arr1.flat());
+        const arr2 = [0, 1, 2, [[[3, 4]]]];
+        console.log(arr2.flat(2));
+
+        //map() it will take each element in array and then it will do operatons given and it will give result in new array
+        const array2 = [1, 4, 9, 16];
+        const map1 = array2.map(x => x * 2);
+        console.log(map1);
+
+        //flatmap() it will do combination of flat() an map()
+        const arr3= [1, 2, [3], [4, 5], 6, []];
+        const flattened = arr3.flatMap(num => num*2);
+        console.log(flattened);
+    </script>
+</body>
+
+</html>
