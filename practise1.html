@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        #id1 {
+            width: 200px;
+            height: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 15px;
+            padding-right: 10px;
+            border: 4px red solid;
+            background-color: black;
+            color: rgb(0, 0, 243);
+        }
+
+        h1 {
+            color: brown;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1><u>Example Box Model</u></h1>
+    <p id="id1">Type your details given below</p>
+    <label for="id1"><b>FirstName</b></label>
+    <input type="text" class="Name">
+    <br><br>
+    <label for="id2"><b>LastName</b></label>
+    <input type="text" class="Name">
+    <br><br>
+    <label for="id3"><b>MobileNumber</b></label>
+    <input type="number">
+    <br><br>
+    <button id="btn1" class="btn"><b>Submit</b></button>
+    <button id="btn2" class="btn" onclick="fnc()" ><b>Cancel</b></button>
+
+    <script>
+        function fnc(){
+            location.reload();
+        }
+    </script>
+
+</body>
+
+</html>
